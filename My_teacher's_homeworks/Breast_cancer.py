@@ -68,4 +68,4 @@ max_accuracy_index = np.array(accuracies).argmax()
 print('最大值下标：', max_accuracy_index)
 print('最大值下标对应的K值：', ks[max_accuracy_index])
 
-# Created by moyuhualuo, if u like, start my GitHub.
+# Created by moyuhualuo, if u like, star my GitHub.

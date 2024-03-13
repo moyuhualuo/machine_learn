@@ -29,4 +29,4 @@ plt.xlabel('k value')
 plt.ylabel('score')
 plt.show()
 
-# Created by moyuhualuo, if u like, start my GitHub.
+# Created by moyuhualuo, if u like, star my GitHub.
