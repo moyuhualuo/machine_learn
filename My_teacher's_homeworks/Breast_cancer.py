@@ -43,8 +43,8 @@ knn = KNeighborsClassifier(n_neighbors=8)
 '''使用模型'''
 knn_model = knn.fit(X_train, y_train)
 
-X_test_predict = knn.predict(X_test)
-print('模型预测结果：', X_test_predict)
+y_test_predict = knn.predict(X_test)
+print('模型预测结果：', y_test_predict)
 print('真实分类结果', y_test)
 
 accuracy = knn_model.score(X_test, y_test)
@@ -68,4 +68,3 @@ max_accuracy_index = np.array(accuracies).argmax()
 print('最大值下标：', max_accuracy_index)
 print('最大值下标对应的K值：', ks[max_accuracy_index])
 
-# Created by moyuhualuo, if u like, star my GitHub.

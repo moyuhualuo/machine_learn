@@ -16,7 +16,7 @@ scores = []
 ks = []
 for k in range(2, 20):
     knn = KNeighborsClassifier(n_neighbors=k)
-    score = cross_val_score(knn, X_train, y_train, cv=7).mean()
+    score = cross_val_score(knn, X_train, y_train, cv=5).mean()
     scores.append(score)
     ks.append(k)
 
@@ -28,5 +28,3 @@ plt.plot(ks, scores)
 plt.xlabel('k value')
 plt.ylabel('score')
 plt.show()
-
-# Created by moyuhualuo, if u like, star my GitHub.
