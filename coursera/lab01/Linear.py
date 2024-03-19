@@ -99,3 +99,5 @@ def draw_Linear():
 
 
     plt.show()
+
+draw_Linear()

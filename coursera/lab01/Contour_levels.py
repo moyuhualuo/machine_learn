@@ -6,7 +6,7 @@ import Linear
 w = Linear.w_range
 b = Linear.b_range
 y = Linear.y_range
-由于没用很好设置类，如果掉包，将重新设置解构，至此我深深体会到了Class的重要性，折断的骨才是最好的说教
+由于没用很好设置类，如果掉包，将重新设置代码结构，至此我深深体会到了Class的重要性，折断的骨才是最好的说教
 '''
 def compute(x, y, w_array, b_array):
     m = x.shape[0]
