@@ -24,7 +24,11 @@ class MyClass:
     def set_w(self, w):
         self.w = w
 
+    def get_b(self):
+        return self.b
+
     # 固定 w, b 计算 cost
+    # 误差计算
     def compute_cost(self, w_val):
         m = self.x.shape[0]
         cost = 0
@@ -33,12 +37,12 @@ class MyClass:
             f_wb = w_val * self.x[i] + self.b
             cost = cost + (f_wb - self.y[i]) ** 2
 
-        total_cost = 1 / (2 * m) * cost
+        total_cost = (1 / (2 * m)) * cost
         return total_cost
 
 
 x_train = np.array([1.0, 2.0])
 y_train = np.array([300.0, 500.0])
-w_range = np.linspace(-50.0, 501.0, num=550)
+w_range = np.linspace(-50.0, 500, 500)
 my_instance = MyClass(x_train, y_train, w_range, 100)
 
