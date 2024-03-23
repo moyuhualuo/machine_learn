@@ -184,6 +184,6 @@ print(X_train.std(axis=0))
 # draw_p2()
 # draw_p3()
 # draw_p4()
-# draw_p5()
+draw_p5()
 
 plt.show()
