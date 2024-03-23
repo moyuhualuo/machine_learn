@@ -4,6 +4,8 @@
 
 $$
 y = w{_{1}}x{_{1}} +  w{_{2}}x{_{1}} + w{_{3}}m{_{3}}+...+w{_{n}}x{_{n}} + b
+
+
 $$
 
 其中：
@@ -68,48 +70,48 @@ $$
 
 # 归一化处理图像理论分析 🚀️ `ing...`
 
-- 归一化
+归一化
 
-  - 最小 — 最大归一化
+> 最小 — 最大归一化
 
-    $$
-    x{_{norm}} = \frac{x-x{_{min}}}{x{_{max}} -x{_{min}}}
-    $$
+$$
+x_{\text{norm}} = \frac{x - x_{\text{min}}}{x_{\text{max}} - x_{\text{min}}}
+$$
 
-  - 均值化归一
+> 均值化归一
 
-    $$
-    x_{norm} = \frac{x_{}-\mu_{}}{x_{max}-x_{min}}
-    $$
+$$
+x_{\text{norm}} = \frac{x - \mu}{x_{\text{max}} - x_{\text{min}}}
+$$
 
-    - 其中
+其中
 
-  $$
-  \mu = \frac{1}{m} \sum_{i=0}^{m-1} x^{(i)}_j \\ OR \ use \ Numpy \ api: \ x.mean()
-  $$
+$$
+\mu = \frac{1}{m} \sum_{i=0}^{m-1} x^{(i)}_j \quad \text{or use Numpy api:} \ x.\text{mean()}
+$$
 
-  - 标准正态化
+> 标准正态化
 
-  $$
-  X\sim N(\mu\ ,\sigma^{2} )
-  $$
+$$
+X \sim N(\mu, \sigma^2)
+$$
 
-- 其中**norm:**
+其中 norm:
 
-  $$
-  X_{norm} \sim N(0\ ,1 )
-  $$
+$$
+X_{\text{norm}} \sim N(0, 1)
+$$
 
-  $$
-  {x_{norm}} = \frac{x_{j}-\mu_{j}}{\sigma_{j}}
-  $$
+$$
+{x_{\text{norm}}} = \frac{x_j - \mu_j}{\sigma_j}
+$$
 
-  $$
-  \mu_j = \frac{1}{m} \sum_{i=0}^{m-1} x^{(i)}_j
-  $$
+$$
+\mu_j = \frac{1}{m} \sum_{i=0}^{m-1} x^{(i)}_j
+$$
 
-  $$
-  \sigma^2_j = \frac{1}{m} \sum_{i=0}^{m-1} (x^{(i)}_j - \mu_j)^2
-  $$
+$$
+\sigma^2_j = \frac{1}{m} \sum_{i=0}^{m-1} (x^{(i)}_j - \mu_j)^2
+$$
 
 ---
