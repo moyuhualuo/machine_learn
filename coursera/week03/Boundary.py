@@ -39,6 +39,6 @@ ax0.grid(True)
 ax0.set_xlabel('$x_0$')
 ax0.set_ylabel('$x_1$')
 ax0.fill_between(x0, x1, alpha=0.2)
-
+ax0.set_title('$f(x) = x_0 + x_1 - 3$')
 
 plt.show()

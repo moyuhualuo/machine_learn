@@ -1,25 +1,29 @@
-import numpy as np
-import matplotlib.pyplot as plt
 
 
+res = {}
 
-# 生成一些 z 值
-z = np.linspace(-10, 10, 100)
 
-# 创建图表和坐标轴对象
-fig, ax = plt.subplots()
-ax.axis([-10, 10, -0.1, 1.1])
-# 绘制 sigmoid 函数的图像
-ax.plot(z, sigmoid(z), c="b")
-ax.axvline(x=0, color='g', linestyle='--', label='x=0, left=red')
-ax.fill_between(z, 1, where=(z <= 0), color='r', alpha=0.5)
-ax.fill_between(z, 1, where=(z > 0), color='g', alpha=0.5)
-# ax.fill_between(where=(z < 0), color='r', alpha=0.5)
+def w(a, b, c):
+    if a <= 0 or b <= 0 or c <= 0:
+        return 1
+    if a > 20 or b > 20 or c > 20:
+        return w(20, 20, 20)
+    if (a, b, c) in res:
+        return res[(a, b, c)]
+    if a < b < c:
+            res[(a, b, c)] = w(a, b, c - 1) + w(a, b - 1, c - 1) - w(a, b - 1, c)
+    else:
+            res[(a, b, c)] = w(a - 1, b, c) + w(a - 1, b - 1, c) + w(a - 1, b, c - 1) - w(a - 1, b - 1, c - 1)
+    return res[(a, b, c)]
 
-# 设置坐标轴标签
-ax.set_xlabel('z')
-ax.set_ylabel('sigmoid(z)')
-ax.set_title('Sigmoid Function')
-
-# 显示图表
-plt.show()
+while True:
+    a, b, c = map(int, input().split())
+    if a == b == c == -1:
+        print()
+        break
+    if (a, b, c) not in res.keys():
+        temp = w(a, b, c)
+        res[(a, b, c)] = temp
+        print(f'w({a}, {b}, {c}) = {temp}')
+    else:
+        print(f'w({a}, {b}, {c}) = {res[(a, b, c)]}')
