@@ -34,7 +34,6 @@ $$
 数学分析：
 
 $$
-
 J(w, b) =  \frac{1}{2m}\times  \sum_{i = 0}^{m - 1}\left ( f(x_{i}) - y_{i} \right ) ^{2}
 $$
 
@@ -46,12 +45,15 @@ $$
 
 为了能使极限值唯一，也就是图像存在最好的边界分割，引入`Loss`函数
 
-$$
+> ![01](Latex01.png)
 
+$$
 \text{loss}(f_{\mathbf{w},b}(\mathbf{x}^{(i)}), y^{(i)}) = \begin{cases}    - \log\left(f_{\mathbf{w},b}\left( \mathbf{x}^{(i)} \right) \right) & \text{if } y^{(i)} = 1 \\    - \log \left( 1 - f_{\mathbf{w},b}\left( \mathbf{x}^{(i)} \right) \right) & \text{if } y^{(i)} = 0\end{cases}
 $$
 
 *as well as:*
+
+> ![2](Latex00.png)
 
 $$
 loss(f_{\mathbf{w},b}(\mathbf{x}^{(i)}), y^{(i)}) = (-y^{(i)} \log\left(f_{\mathbf{w},b}\left( \mathbf{x}^{(i)} \right) \right) - \left( 1 - y^{(i)}\right) \log \left( 1 - f_{\mathbf{w},b}\left( \mathbf{x}^{(i)} \right) \right)
