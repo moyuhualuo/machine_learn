@@ -35,7 +35,7 @@ random_state：随机种子，用于控制数据的随机划分，保证可复�
 >>>训练集（Training Set）：训练集用于训练模型。我们将模型拟合到训练集上，使其学习特征和标签之间的关系。
 >>>测试集（Test Set）：测试集用于评估模型的性能。一旦模型在训练集上训练完成，我们使用测试集来测试模型对新样本的泛化能力。换句话说，测试集提供了一个真实环境下的评估标准。"""
 X, y = breast_cancer_data, benign_as_0_or_malignant_as_1
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.8, random_state=42)
 
 '''该模型会考虑每个样本的最近 8 个邻居的标签'''
 knn = KNeighborsClassifier(n_neighbors=8)
@@ -59,7 +59,8 @@ for i in range(2, 100):
     accuracies.append(accuracy)
     ks.append(i)
 
-plt.plot(ks, accuracies)
+
+plt.plot(ks, accuracies, c='b')
 plt.xlabel('K value')
 plt.ylabel('accuracy')
 plt.show()
