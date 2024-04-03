@@ -62,3 +62,42 @@ $$
 修改后图像：
 
 > ![loss.png](loss.png)
+
+### 类比`J(w, b)`**week01线性回归函数**函数对其进行收敛，找其最函数图像最低点
+
+> 通常sk-Learn 学习模型可以提供api快速实现
+
+- 找到最拟合`w, b`
+
+- 应用于Boundary界限设定，拟合训练集
+
+
+
+### 正则化
+
+> 由于过拟合的存在，我们需要 `just right`，引入正则化
+
+$$
+J(\mathbf{w},b) = \frac{1}{2m} \sum\limits_{i = 0}^{m-1} (f_{\mathbf{w},b}(\mathbf{x}^{(i)}) - y^{(i)})^2  + \frac{\lambda}{2m}  \sum_{j=0}^{n-1} w_j^2 \tag{1}
+$$
+
+
+
+### 正则化逻辑回归
+
+$$
+J(\mathbf{w},b) = \frac{1}{m} 
+ \sum_{i=0}^{m-1} \left[ -y^{(i)}
+ \log\left(f_{\mathbf{w},b}
+\left( \mathbf{x}^{(i)} 
+\right) \right) - \left( 1 - y^{(i)}\right) 
+\log \left( 1 - f_{\mathbf{w},b}\left( \mathbf{x}^{(i)} 
+\right) \right) \right] + \frac{\lambda}{2m} 
+ \sum_{j=0}^{n-1} w_j^2
+$$
+
+
+
+> 对其实行梯度下降
+
+![latex02](Latex02.png)
