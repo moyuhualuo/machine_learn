@@ -8,6 +8,7 @@ from sklearn.tree import plot_tree
 datas = load_iris()
 X = datas['data']
 y = datas['target']
+print(X.shape, datas.feature_names)
 
 clf = tree.DecisionTreeClassifier(min_samples_split=10, ccp_alpha = 0.125)
 clf.fit(X, y)

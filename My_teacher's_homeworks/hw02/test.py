@@ -48,4 +48,6 @@ plot_tree(clf_pruned, filled=True, feature_names=iris.feature_names, class_names
 plt.show()
 
 print(clf_pruned.score(X_test, y_test))
+
+#因为其为for循环最后一个，所以为0.3
 print(clf.score(X_test, y_test))
