@@ -17,49 +17,39 @@ $$
 
 根据：
 
-$$
-f_{\mathbf{w},b}(\mathbf{x}) =  w_0x_0 + w_1x_1 +... + w_{n-1}x_{n-1} + b \tag{1}
-$$
+$$ f_{\mathbf{w},b}(\mathbf{x}) =  w_0x_0 + w_1x_1 +... + w_{n-1}x_{n-1} + b \tag{1} $$
 
+---
 Numpy tool dot:
 
-$$
-f_{\mathbf{w},b}(\mathbf{x}) = \mathbf{w} \cdot \mathbf{x} + b  \tag{2}
-$$
+$$ f_{\mathbf{w},b}(\mathbf{x}) = \mathbf{w} \cdot \mathbf{x} + b  \tag{2} $$
 
+---
 > 简单理解为权重不同，例如房间的面积，有几室几厅，有什么设备，是几十年的房子等等，更好估测房价。
 
 欧式误差计算：
 
-$$
-J(\mathbf{w},b) = \frac{1}{2m} \sum\limits_{i = 0}^{m-1} (f_{\mathbf{w},b}(\mathbf{x}^{(i)}) - y^{(i)})^2 \tag{3}
-$$
+$$ J(\mathbf{w},b) = \frac{1}{2m} \sum\limits_{i = 0}^{m-1} (f_{\mathbf{w},b}(\mathbf{x}^{(i)}) - y^{(i)})^2 \tag{3} $$
 
+---
 Numpy tool dot:
 
-$$
-f_{\mathbf{w},b}(\mathbf{x}^{(i)}) = \mathbf{w} \cdot \mathbf{x}^{(i)} + b  \tag{4}
-$$
+$$ f_{\mathbf{w},b}(\mathbf{x}^{(i)}) = \mathbf{w} \cdot \mathbf{x}^{(i)} + b  \tag{4} $$
 
 更新 w, b：
 
 > for i in range(m):
 
-$$
-w{_i} = w{_i} - \alpha \frac{\partial }{\partial w{_j}} J(w{_i}, b) \tag{5}
-$$
+$$ w{_i} = w{_i} - \alpha \frac{\partial }{\partial w{_j}} J(w{_i}, b) \tag{5} $$
 
-$$
-b = b - \alpha \frac{\partial }{\partial b} J(w, b) \tag{6}
-$$
+---
+$$ b = b - \alpha \frac{\partial }{\partial b} J(w, b) \tag{6} $$
 
-$$
-\frac{\partial J(\mathbf{w},b)}{\partial w_j}  = \frac{1}{m} \sum\limits_{i = 0}^{m-1} (f_{\mathbf{w},b}(\mathbf{x}^{(i)}) - y^{(i)})x_{j}^{(i)} \tag{7}
-$$
+---
+$$ \frac{\partial J(\mathbf{w},b)}{\partial w_j}  = \frac{1}{m} \sum\limits_{i = 0}^{m-1} (f_{\mathbf{w},b}(\mathbf{x}^{(i)}) - y^{(i)})x_{j}^{(i)} \tag{7} $$
 
-$$
-\frac{\partial J(\mathbf{w},b)}{\partial b}  = \frac{1}{m} \sum\limits_{i = 0}^{m-1} (f_{\mathbf{w},b}(\mathbf{x}^{(i)}) - y^{(i)}) \tag{8}
-$$
+---
+$$ \frac{\partial J(\mathbf{w},b)}{\partial b}  = \frac{1}{m} \sum\limits_{i = 0}^{m-1} (f_{\mathbf{w},b}(\mathbf{x}^{(i)}) - y^{(i)}) \tag{8} $$
 
 > 根据梯度下降，依次求每个 w 对应的最佳值，和 b 的最佳值，只需初始化迭代更新
 > 最终根据训练集得出准确度最拟合的 w, b 值，来通过测试集预测结果准确性是否符合
